@@ -1,0 +1,17 @@
+language: python
+
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+
+install:
+  - pip install --upgrade pytest pytest-cov codecov
+  - pip install -e .
+
+script:
+  - pytest --cov .
+  - deeply spanish russian "¡Buenos días!"
+
+after_success:
+  - codecov
