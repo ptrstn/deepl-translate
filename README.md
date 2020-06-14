@@ -42,7 +42,7 @@ You can either input the abbreviation or the language written in english.
 deeply --help
 ```
 
-```bash
+```
 usage: deeply [-h] [--version] source target text
 
 Python client to translate texts using deepl.com
@@ -57,7 +57,7 @@ optional arguments:
   --version   show program's version number and exit
 ```
 
-### Example
+#### Example
 
 This will translate a Spanish (```ES```) text into Russian (```RU```):
 
@@ -71,7 +71,7 @@ deeply spanish russian "¡Buenos días!"
 
 ### Python library
 
-### Example
+#### Example
 
 This will translate a Chinese (```ZH```) text into Dutch (```NL```):
 
