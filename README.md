@@ -9,7 +9,7 @@ A python package to translate text using [DeepL](https://www.deepl.com/).
 ## Installation
 
 ```bash
-pip install --user git+https://github.com/ptrstn/deepl-translate
+pip install deepl-translate
 ```
 
 ## Usage
