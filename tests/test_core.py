@@ -1,4 +1,4 @@
-import deeply
+import deepl
 
 
 def test_translate_russian():
@@ -6,7 +6,7 @@ def test_translate_russian():
     language_to = "EN"
     text = "Я сошла с ума"
     expected_translation = "I'm out of my mind."
-    translation = deeply.translate(
+    translation = deepl.translate(
         source_language=language_from, target_language=language_to, text=text
     )
     assert translation == expected_translation
@@ -17,7 +17,7 @@ def test_translate_chinese():
     language_to = "dutch"
     text = "你好"
     expected_translation = "Hallo."
-    translation = deeply.translate(
+    translation = deepl.translate(
         source_language=language_from, target_language=language_to, text=text
     )
     assert translation == expected_translation

@@ -1,6 +1,6 @@
 [run]
 omit =
-    deeply/__main__.py
+    deepl/__main__.py
     venv/*
     tests/*
     setup.py

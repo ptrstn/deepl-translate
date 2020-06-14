@@ -21,12 +21,12 @@ def find_version(*file_paths):
 
 
 setup(
-    name="deeply",
-    version=find_version("deeply", "__init__.py"),
-    url="http://github.com/ptrstn/deeply",
+    name="deepl-translate",
+    version=find_version("deepl", "__init__.py"),
+    url="http://github.com/ptrstn/deepl-translate",
     author="Peter Stein",
     license="MIT",
-    packages=["deeply"],
+    packages=["deepl"],
     install_requires=["requests"],
-    entry_points={"console_scripts": ["deeply=deeply.__main__:main"]},
+    entry_points={"console_scripts": ["deepl=deepl.__main__:main"]},
 )

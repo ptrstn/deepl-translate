@@ -1,15 +1,15 @@
-[![Build Status](https://travis-ci.com/ptrstn/deeply.svg?branch=master)](https://travis-ci.com/ptrstn/deeply)
-[![codecov](https://codecov.io/gh/ptrstn/deeply/branch/master/graph/badge.svg)](https://codecov.io/gh/ptrstn/deeply)
+[![Build Status](https://travis-ci.com/ptrstn/deepl-translate.svg?branch=master)](https://travis-ci.com/ptrstn/deepl-translate)
+[![codecov](https://codecov.io/gh/ptrstn/deepl-translate/branch/master/graph/badge.svg)](https://codecov.io/gh/ptrstn/deepl-translate)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-# Deeply
+# DeepL Translate
 
 A python package to translate text using [DeepL](https://www.deepl.com/).
 
 ## Installation
 
 ```bash
-pip install --user git+https://github.com/ptrstn/deeply
+pip install --user git+https://github.com/ptrstn/deepl-translate
 ```
 
 ## Usage
@@ -39,11 +39,11 @@ You can either input the abbreviation or the language written in english.
 #### Help
 
 ```bash
-deeply --help
+deepl --help
 ```
 
 ```
-usage: deeply [-h] [--version] source target text
+usage: deepl [-h] [--version] source target text
 
 Python client to translate texts using deepl.com
 
@@ -62,7 +62,7 @@ optional arguments:
 This will translate a Spanish (```ES```) text into Russian (```RU```):
 
 ```bash
-deeply spanish russian "¡Buenos días!"
+deepl spanish russian "¡Buenos días!"
 ```
 
 ```
@@ -76,8 +76,8 @@ deeply spanish russian "¡Buenos días!"
 This will translate a Chinese (```ZH```) text into Dutch (```NL```):
 
 ```python
-import deeply
-deeply.translate(source_language="ZH", target_language="NL", text="你好")
+import deepl
+deepl.translate(source_language="ZH", target_language="NL", text="你好")
 ```
 
 ```

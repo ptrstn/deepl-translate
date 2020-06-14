@@ -11,7 +11,7 @@ install:
 
 script:
   - pytest --cov .
-  - deeply spanish russian "¡Buenos días!"
+  - deepl spanish russian "¡Buenos días!"
 
 after_success:
   - codecov

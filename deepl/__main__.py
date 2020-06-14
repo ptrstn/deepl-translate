@@ -1,7 +1,7 @@
 import argparse
 
-import deeply
-from deeply import __version__
+import deepl
+from deepl import __version__
 
 
 def parse_arguments():
@@ -28,7 +28,7 @@ def main():
     target_language = args.target
     text = args.text
     try:
-        print(deeply.translate(source_language, target_language, text))
+        print(deepl.translate(source_language, target_language, text))
     except AssertionError as e:
         print(f"Error: {e}")
 
