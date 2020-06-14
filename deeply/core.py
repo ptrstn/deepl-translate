@@ -90,10 +90,10 @@ def translate(source_language="DE", target_language="RU", text="Guten Tag"):
 
     assert (
         language_from in SUPPORTED_LANGUAGES
-    ), f"Unsupported language: {source_language} -> {target_language}"
+    ), f"Unsupported language: {source_language} ({source_language} -> {target_language})"
     assert (
         language_to in SUPPORTED_LANGUAGES
-    ), f"Unsupported language: {source_language} -> {target_language}"
+    ), f"Unsupported language: {target_language} ({source_language} -> {target_language})"
 
     data = generate_request_data(
         text=text, source_language=language_from, target_language=language_to

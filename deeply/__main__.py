@@ -27,7 +27,10 @@ def main():
     source_language = args.source
     target_language = args.target
     text = args.text
-    print(deeply.translate(source_language, target_language, text))
+    try:
+        print(deeply.translate(source_language, target_language, text))
+    except AssertionError as e:
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":
