@@ -2,6 +2,7 @@ import argparse
 
 import deepl
 from deepl import __version__
+from deepl.utils import read_file_lines
 
 
 def parse_arguments():
@@ -13,20 +14,29 @@ def parse_arguments():
         "--version", action="version", version="%(prog)s {}".format(__version__)
     )
 
-    parser.add_argument("source", help="Source language of your text")
+    parser.add_argument("source_language", help="Source language of your text")
 
-    parser.add_argument("target", help="Target language of your desired text")
+    parser.add_argument("target_language", help="Target language of your desired text")
 
-    parser.add_argument("text", help="Text to be translated")
+    input_group = parser.add_mutually_exclusive_group()
+
+    input_group.add_argument("-t", "--text", help="Text to be translated")
+
+    input_group.add_argument("-f", "--file", help="File to be translated")
 
     return parser.parse_args()
 
 
 def main():
     args = parse_arguments()
-    source_language = args.source
-    target_language = args.target
-    text = args.text
+    source_language = args.source_language
+    target_language = args.target_language
+
+    if args.file:
+        text = read_file_lines(args.file)
+    else:
+        text = args.text
+
     try:
         print(deepl.translate(source_language, target_language, text))
     except AssertionError as e:
