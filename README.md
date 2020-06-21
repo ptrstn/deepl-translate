@@ -4,12 +4,12 @@
 
 # DeepL Translate
 
-A python package to translate text using [DeepL](https://www.deepl.com/).
+An unofficial python package to translate text using [DeepL](https://www.deepl.com/).
 
 ## Installation
 
 ```bash
-pip install deepl-translate
+pip install git+https://github.com/ptrstn/deepl-translate
 ```
 
 ## Usage
@@ -43,30 +43,39 @@ deepl --help
 ```
 
 ```
-usage: deepl [-h] [--version] source target text
+usage: deepl [-h] [--version] [-t TEXT | -f FILE] source_language target_language
 
 Python client to translate texts using deepl.com
 
 positional arguments:
-  source      Source language of your text
-  target      Target language of your desired text
-  text        Text to be translated
+  source_language       Source language of your text
+  target_language       Target language of your desired text
 
 optional arguments:
-  -h, --help  show this help message and exit
-  --version   show program's version number and exit
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -t TEXT, --text TEXT  Text to be translated
+  -f FILE, --file FILE  File to be translated
 ```
 
-#### Example
+#### Example 1
 
 This will translate a Spanish (```ES```) text into Russian (```RU```):
 
 ```bash
-deepl spanish russian "¡Buenos días!"
+deepl spanish russian -t "¡Buenos días!"
 ```
 
 ```
 Доброе утро!
+```
+
+#### Example 2
+
+This will translate a the file (```test.txt```) text from Italian (```IT```) into Portuguese (```PT```):
+
+```bash
+deepl IT PT --file test.txt
 ```
 
 ### Python library
