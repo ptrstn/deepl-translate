@@ -6,12 +6,11 @@ python:
   - "3.8"
 
 install:
-  - pip install --upgrade pytest pytest-cov codecov
+  - pip install --upgrade -r testing-requirements.txt codecov
   - pip install -e .
 
 script:
   - pytest --cov .
-  - deepl spanish russian "¡Buenos días!"
 
 after_success:
   - codecov
