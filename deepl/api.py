@@ -14,7 +14,7 @@ headers = {
     "accept": "*/*",
     "accept-language": "en-US;q=0.8,en;q=0.7",
     "authority": "www2.deepl.com",
-    "content-type": "text/plain",
+    "content-type": "application/json",
     "origin": "https://www.deepl.com",
     "referer": "https://www.deepl.com/translator",
     "sec-fetch-dest": "empty",
