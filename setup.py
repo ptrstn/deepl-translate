@@ -20,7 +20,7 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-with open(os.path.join(here, "README.md")) as f:
+with open(os.path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
