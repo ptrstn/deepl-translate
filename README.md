@@ -20,17 +20,30 @@ Currently the following languages are supported:
 
 | Abbreviation | Language   | Writing in own language |
 |--------------|------------|-------------------------|
-| DE           | German     | Deutsch                 |
-| EN           | English    | English                 |
-| FR           | French     | français                |
-| ES           | Spanish    | español                 |
-| PT           | Portuguese | português               |
-| IT           | Italian    | italiano                |
+| BG           | Bulgarian  | Български               |
+| ZH           | Chinese    | 中文                    |
+| CS           | Czech      | Česky                   |
+| DA           | Danish     | Dansk                   |
 | NL           | Dutch      | Nederlands              |
-| PL           | Polish     | polski                  |
-| RU           | Russian    | русский                 |
-| JA           | Japanese   | 日本語                   |
-| ZH           | Chinese    | 中文                     |
+| EN           | English    | English                 |
+| ET           | Estonian   | Eesti                   |
+| FI           | Finnish    | Suomi                   |
+| FR           | French     | Français                |
+| DE           | German     | Deutsch                 |
+| EL           | Greek      | Ελληνικά                |
+| HU           | Hungarian  | Magyar                  |
+| IT           | Italian    | Italiano                |
+| JA           | Japanese   | 日本語                  |
+| LV           | Latvian    | Latviešu                |
+| LT           | Lithuanian | Lietuvių                |
+| PL           | Polish     | Polski                  |
+| PT           | Portuguese | Português               |
+| RO           | Romanian   | Română                  |
+| RU           | Russian    | Русский                 |
+| SK           | Slovak     | Slovenčina              |
+| SL           | Slovenian  | Slovenščina             |
+| ES           | Spanish    | Español                 |
+| SV           | Swedish    | Svenska                 |
 
 You can either input the abbreviation or the language written in english. 
 

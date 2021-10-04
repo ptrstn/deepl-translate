@@ -21,6 +21,15 @@ def test_translate_chinese():
     assert expected_translation in translation
 
 
+def test_translate_greek_romanian():
+    source_language = "gReEk"
+    target_language = "ro"
+    text = "Γεια σας"
+    expected_translation = "bună ziua"
+    translation = translate(source_language, target_language, text)
+    assert expected_translation in translation.lower()
+
+
 def test_translate_sentence():
     text = "Up and down."
     expected_translation = "Op en neer."
@@ -32,7 +41,7 @@ def test_translate_sentences():
         "His palms are sweaty, knees weak, arms are heavy. "
         "There's vomit on his sweater already, mom's spaghetti."
     )
-    
+
     translation = translate("EN", "DE", text)
     assert "Handfläche" in translation
     assert "Pullover" in translation
