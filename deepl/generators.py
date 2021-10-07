@@ -1,5 +1,5 @@
 from deepl.hacks import generate_timestamp
-from deepl.settings import MAGIC_NUMBER
+from deepl.settings import MAGIC_NUMBER, SUPPORTED_FORMALITY_TONES
 
 
 def generate_split_sentences_request_data(text, identifier=MAGIC_NUMBER, **kwargs):
@@ -30,8 +30,21 @@ def generate_jobs(sentences, beams=1):
     return jobs
 
 
+def generate_common_job_params(formality_tone):
+    if not formality_tone:
+        return {}
+    if formality_tone not in SUPPORTED_FORMALITY_TONES:
+        raise ValueError(f"Formality tone '{formality_tone}' not supported.")
+    return {"formality": formality_tone}
+
+
 def generate_translation_request_data(
-    source_language, target_language, sentences, identifier=MAGIC_NUMBER, alternatives=1
+    source_language,
+    target_language,
+    sentences,
+    identifier=MAGIC_NUMBER,
+    alternatives=1,
+    formality_tone=None,
 ):
     return {
         "jsonrpc": "2.0",
@@ -44,7 +57,7 @@ def generate_translation_request_data(
                 "target_lang": target_language,
             },
             "priority": 1,
-            "commonJobParams": {},
+            "commonJobParams": generate_common_job_params(formality_tone),
             "timestamp": generate_timestamp(sentences),
         },
         "id": identifier,

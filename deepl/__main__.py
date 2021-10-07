@@ -15,13 +15,18 @@ def parse_arguments():
     )
 
     parser.add_argument("source_language", help="Source language of your text")
-
     parser.add_argument("target_language", help="Target language of your desired text")
 
+    formality_group = parser.add_mutually_exclusive_group()
+    formality_group.add_argument(
+        "--formal", help="Use formal tone in translation", action="store_true"
+    )
+    formality_group.add_argument(
+        "--informal", help="Use informal tone in translation", action="store_true"
+    )
+
     input_group = parser.add_mutually_exclusive_group()
-
     input_group.add_argument("-t", "--text", help="Text to be translated")
-
     input_group.add_argument("-f", "--file", help="File to be translated")
 
     return parser.parse_args()
@@ -37,8 +42,14 @@ def main():
     else:
         text = args.text
 
+    kwargs = {}
+    if args.formal:
+        kwargs["formality_tone"] = "formal"
+    if args.informal:
+        kwargs["formality_tone"] = "informal"
+
     try:
-        print(deepl.translate(source_language, target_language, text))
+        print(deepl.translate(source_language, target_language, text, **kwargs))
     except AssertionError as e:
         print(f"Error: {e}")
 

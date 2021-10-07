@@ -1,3 +1,4 @@
+import pytest
 from essential_generators import DocumentGenerator
 
 from deepl.api import translate
@@ -53,3 +54,22 @@ def test_translate_generated_paragraph():
     text = generator.paragraph()
     translation = translate("EN", "DE", text)
     assert len(translation) > 1
+
+
+def test_formal_german_translation():
+    text = "What's your name?"
+    expected_translations = ["Wie ist Ihr Name?", "Wie heißen Sie?"]
+    translation = translate("EN", "DE", text, formality_tone="formal")
+    assert translation in expected_translations
+
+
+def test_informal_german_translation():
+    text = "What's your name?"
+    expected_translations = ["Wie ist dein Name?", "Wie heißt du?"]
+    translation = translate("EN", "DE", text, formality_tone="informal")
+    assert translation in expected_translations
+
+
+def test_invalid_formal_tone():
+    with pytest.raises(ValueError):
+        translate("EN", "DE", "ABC", formality_tone="politically incorrect")
