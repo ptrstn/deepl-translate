@@ -56,7 +56,7 @@ deepl --help
 ```
 
 ```
-usage: deepl [-h] [--version] [-t TEXT | -f FILE] source_language target_language
+usage: deepl [-h] [--version] [--formal | --informal] [-t TEXT | -f FILE] source_language target_language
 
 Python client to translate texts using deepl.com
 
@@ -67,6 +67,8 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --version             show program's version number and exit
+  --formal              Use formal tone in translation
+  --informal            Use informal tone in translation
   -t TEXT, --text TEXT  Text to be translated
   -f FILE, --file FILE  File to be translated
 ```
@@ -85,15 +87,43 @@ deepl spanish russian -t "¡Buenos días!"
 
 #### Example 2
 
-This will translate a the file (```test.txt```) text from Italian (```IT```) into Portuguese (```PT```):
+This will translate the file (```test.txt```) text from Italian (```IT```) into Portuguese (```PT```):
 
 ```bash
 deepl IT PT --file test.txt
 ```
 
+#### Example 3
+
+This will translate a Spanish (```ES```) text into Russian (```RU```) in _formal_ tone:
+
+```bash
+deepl ES RU --text "¿Cómo te llamas?" --formal
+```
+
+```
+Как Вас зовут?
+```
+
+Note: _informal_ would be "_Как **тебя** зовут?_"
+
+#### Example 4
+
+This will translate a Japanese (```JP```) text into German (```DE```) in _informal_ tone:
+
+```bash
+deepl JP DE --text "お元気ですか？" --informal
+```
+
+```
+Wie geht es dir?
+```
+
+Note: _formal_ would be "_Wie geht es **Ihnen**?_"
+
 ### Python library
 
-#### Example
+#### Example 1
 
 This will translate a Chinese (```ZH```) text into Dutch (```NL```):
 
@@ -103,5 +133,18 @@ deepl.translate(source_language="ZH", target_language="NL", text="你好")
 ```
 
 ```
-'Hallo.'
+'Hallo'
+```
+
+#### Example 2
+
+This will translate a ```danish``` text into ```german``` in informal tone:
+
+```python
+import deepl
+deepl.translate(source_language="danish", target_language="german", text="Ring til mig!", formality_tone="informal")
+```
+
+```
+'Ruf mich an!'
 ```

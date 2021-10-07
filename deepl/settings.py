@@ -28,3 +28,5 @@ SUPPORTED_LANGUAGES = [
     {"code": "ES", "language": "Spanish"},
     {"code": "SV", "language": "Swedish"},
 ]
+
+SUPPORTED_FORMALITY_TONES = ["formal", "informal"]
