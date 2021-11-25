@@ -6,6 +6,7 @@ exclude =
     build,
     dist,
     venv
+ignore = F401
 max-complexity = 10
 max-line-length = 88
 show-source = True
