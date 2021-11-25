@@ -1,0 +1,12 @@
+[flake8]
+count = True
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+    venv
+max-complexity = 10
+max-line-length = 88
+show-source = True
+statistics = True
