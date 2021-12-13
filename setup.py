@@ -32,6 +32,7 @@ setup(
     url="http://github.com/ptrstn/deepl-translate",
     author="Peter Stein",
     license="MIT",
+    python_requires='>3.6',
     packages=["deepl"],
     install_requires=["requests"],
     entry_points={"console_scripts": ["deepl=deepl.__main__:main"]},
