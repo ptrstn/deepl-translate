@@ -1,3 +1,4 @@
+[![PyPI version](https://badge.fury.io/py/deepl-translate.svg)](https://badge.fury.io/py/deepl-translate)
 [![Python Package](https://github.com/ptrstn/deepl-translate/actions/workflows/python-package.yml/badge.svg)](https://github.com/ptrstn/deepl-translate/actions/workflows/python-package.yml)
 [![codecov](https://codecov.io/gh/ptrstn/deepl-translate/branch/master/graph/badge.svg)](https://codecov.io/gh/ptrstn/deepl-translate)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -9,7 +10,7 @@ An unofficial python package to translate text using [DeepL](https://www.deepl.c
 ## Installation
 
 ```bash
-pip install git+https://github.com/ptrstn/deepl-translate
+pip install deepl-translate
 ```
 
 ## Usage
