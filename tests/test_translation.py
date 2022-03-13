@@ -1,3 +1,5 @@
+from time import sleep
+
 import pytest
 from essential_generators import DocumentGenerator
 
@@ -11,6 +13,7 @@ def test_translate_russian():
     expected_translation = "I'm out of my mind."
     translation = translate(source_language, target_language, text)
     assert translation == expected_translation
+    sleep(0.5)
 
 
 def test_translate_chinese():
@@ -20,6 +23,7 @@ def test_translate_chinese():
     expected_translation = "Hallo"
     translation = translate(source_language, target_language, text)
     assert expected_translation in translation
+    sleep(0.5)
 
 
 def test_translate_greek_romanian():
@@ -29,12 +33,14 @@ def test_translate_greek_romanian():
     expected_translation = "bună ziua"
     translation = translate(source_language, target_language, text)
     assert expected_translation in translation.lower()
+    sleep(0.5)
 
 
 def test_translate_sentence():
     text = "Up and down."
     expected_translation = "Op en neer."
     assert translate("EN", "NL", text) == expected_translation
+    sleep(0.5)
 
 
 def test_translate_sentences():
@@ -47,6 +53,7 @@ def test_translate_sentences():
     assert "Handfläche" in translation
     assert "Pullover" in translation
     assert "Spaghetti" in translation
+    sleep(0.5)
 
 
 def test_translate_generated_paragraph():
@@ -54,6 +61,7 @@ def test_translate_generated_paragraph():
     text = generator.paragraph()
     translation = translate("EN", "DE", text)
     assert len(translation) > 1
+    sleep(0.5)
 
 
 def test_formal_german_translation():
@@ -61,6 +69,7 @@ def test_formal_german_translation():
     expected_translations = ["Wie ist Ihr Name?", "Wie heißen Sie?"]
     translation = translate("EN", "DE", text, formality_tone="formal")
     assert translation in expected_translations
+    sleep(0.5)
 
 
 def test_informal_german_translation():
@@ -68,8 +77,10 @@ def test_informal_german_translation():
     expected_translations = ["Wie ist dein Name?", "Wie heißt du?"]
     translation = translate("EN", "DE", text, formality_tone="informal")
     assert translation in expected_translations
+    sleep(0.5)
 
 
 def test_invalid_formal_tone():
     with pytest.raises(ValueError):
         translate("EN", "DE", "ABC", formality_tone="politically incorrect")
+    sleep(0.5)
