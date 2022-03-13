@@ -26,7 +26,7 @@ with open(os.path.join(here, "README.md"), encoding="utf-8") as f:
 setup(
     name="deepl-translate",
     version=find_version("deepl", "__init__.py"),
-    desription="Python package to translate text using deepl.com",
+    description="Python package to translate text using deepl.com",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="http://github.com/ptrstn/deepl-translate",
